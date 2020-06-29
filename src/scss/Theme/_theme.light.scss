@@ -1,0 +1,22 @@
+@import "../Resource/index";
+
+@mixin theme_container {
+  background-color: white;
+  color: black;
+}
+@mixin theme_frame {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+@mixin theme_switchBtn {
+  border-color: black;
+}
+@mixin theme_stalker {
+  border-color: black;
+}
+@mixin link {
+  color: white;
+}
+@mixin link-header {
+  color: black;
+}

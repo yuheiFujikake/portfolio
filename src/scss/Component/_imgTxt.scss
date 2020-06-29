@@ -1,0 +1,46 @@
+@import "../Resource/index";
+.imgTxt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  @include mq(small) {
+    display: block;
+  }
+  &_imageArea {
+    width: 30%;
+    @include mq(small) {
+      width: 100%;
+    }
+    .profile{
+      &-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        @include mq(small) {
+          margin: auto;
+          width: 230px;
+        }
+      }
+      &-name {
+        margin-top: 0px;
+        @extend %font_size-read;
+        line-height: 1.5;
+        text-align: center;
+      }
+      &-job {
+        @extend %font_size-note;
+        line-height: 1;
+        text-align: center;
+      }
+    }
+  }
+  &_txtArea {
+    width: calc(70% - 50px);
+    @include mq(small) {
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.switchBtn {
+  padding: 5px 25px;
+  border-radius: 45px;
+  border-style: solid;
+  border-width: 1px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: opacity .4s ease;
+  &:hover {
+    opacity: 0.7;
+  }
+  @include mq(small) {
+    display: none !important;
+  }
+}

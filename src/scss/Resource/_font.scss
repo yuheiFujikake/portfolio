@@ -1,0 +1,65 @@
+@import "./responsive";
+
+%font_size-max {
+  font-size: 48px;
+  @include mq("small") {
+    font-size: 32px;
+  }
+}
+
+%font_size-head {
+  font-size: 32px;
+  @include mq("small") {
+    font-size: 24px;
+  }
+}
+
+%font_size-read {
+  font-size: 24px;
+  @include mq("small") {
+    font-size: 18px;
+  }
+}
+
+%font_size-text {
+  font-size: 18px;
+  @include mq("small") {
+    font-size: 16px;
+  }
+}
+
+%font_size-caption {
+  font-size: 16px;
+  @include mq("small") {
+    font-size: 14px;
+  }
+}
+
+%font_size-note {
+  font-size: 14px;
+  @include mq("small") {
+    font-size: 12px;
+  }
+}
+
+h1 {
+  @extend %font_size-max;
+  font-weight: bold;
+  line-height: 1.5;
+}
+h2 {
+  @extend %font_size-head;
+  font-weight: bold;
+  line-height: 1.5;
+}
+h3 {
+  @extend %font_size-read;
+  font-weight: bold;
+  line-height: 1.5;
+}
+p {
+  @extend %font_size-text;
+  font-weight: normal;
+  line-height: 1.75;
+  letter-spacing: 0.05em;
+}

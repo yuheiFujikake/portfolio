@@ -1,0 +1,47 @@
+@import "../Resource/index";
+
+.header {
+  * { background-color: transparent; }
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background-color: transparent;
+  height: 80px;
+  width: 100%;
+  &_list {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  &_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.ttl {
+      @extend %font_size-head;
+    }
+    &.switchBtn {
+      position: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 35px;
+      right: 50px;
+      padding: 5px 25px;
+      border-radius: 45px;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+    .link {
+      text-decoration: none;
+      transition: opacity .4s ease;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

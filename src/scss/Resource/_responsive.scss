@@ -1,0 +1,44 @@
+$mq-breakpoints: (
+  'min': 320px,
+  'xxsmall': 375px,
+  'xsmall' : 600px,
+  'small': 768px,
+  'medium' : 1024px,
+  'large': 1280px,
+  'xlarge': 1440px,
+  'xxlarge': 1600px,
+  'max': 1920px
+);
+
+@mixin mq($breakpoint: medium, $rule: max, $direction: width) {
+  $breakpoint: map_get($mq-breakpoints, $breakpoint);
+  @if $rule == max {
+    $breakpoint: $breakpoint - 1;
+  }
+  @media screen and (#{$rule}-#{$direction}: $breakpoint) {
+    @content;
+  }
+}
+// @media screen and (max-width: 767px)
+
+@mixin mq-and($breakpoint-w: medium, $breakpoint-h: medium, $rule-w: max, $rule-h: max) {
+  $breakpoint-w: map_get($mq-breakpoints, $breakpoint-w);
+  $breakpoint-h: map_get($mq-breakpoints, $breakpoint-h);
+  @if $rule-w == max { $breakpoint-w: $breakpoint-w - 1; }
+  @if $rule-h == max { $breakpoint-h: $breakpoint-h - 1; }
+  @media screen and (#{$rule-w}-width: $breakpoint-w) and (#{$rule-h}-height: $breakpoint-h) {
+    @content;
+  }
+}
+// @media screen and (max-width: 767px) and (max-height: 767px)
+
+@mixin mq-or($breakpoint-w: medium, $breakpoint-h: medium, $rule-w: max, $rule-h: max) {
+  $breakpoint-w: map_get($mq-breakpoints, $breakpoint-w);
+  $breakpoint-h: map_get($mq-breakpoints, $breakpoint-h);
+  @if $rule-w == max { $breakpoint-w: $breakpoint-w - 1; }
+  @if $rule-h == max { $breakpoint-h: $breakpoint-h - 1; }
+  @media screen and (#{$rule-w}-width: $breakpoint-w), screen and (#{$rule-h}-height: $breakpoint-h) {
+    @content;
+  }
+}
+// @media screen and (max-width: 767px), (max-height: 767px)

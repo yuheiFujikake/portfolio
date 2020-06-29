@@ -1,0 +1,20 @@
+.frame {
+  &-section {
+    position: relative;
+    margin: 160px auto 0;
+    padding: 30px 40px 80px;
+    width: 960px;
+    @include mq(small) {
+      margin: 80px auto 0;
+      padding: 30px 20px 30px;
+      min-height: 200px;
+    }
+    h2 {
+      margin-bottom: 30px;
+      text-align: center; 
+    }
+    @include mq("small") {
+      width: calc(100% - 50px);
+    }
+  }
+}

@@ -1,0 +1,81 @@
+@import "./Component/header";
+@import "./Component/frame";
+@import "./Component/button";
+@import "./Component/imgTxt";
+
+.intro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 960px;
+  transform: translate(-50%, -50%);
+  @include mq("small") {
+    width: calc(100% - 50px)
+  }
+  &-ttl {
+    line-height: 1.5;
+  } 
+}
+
+.pageAllCover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.content {
+  margin-top: 100vh;
+  display: block;
+}
+
+.comingSoon {
+  @extend %font_size-max;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  @include mq(small) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+  }
+}
+
+.contact {
+  margin-bottom: 160px;
+  @include mq(small) {
+    margin-bottom: 80px;
+  }
+  &_txt {
+    text-align: center;
+  }
+  &_link {
+    margin: 30px auto 0;
+    display: block;
+    width: 300px;
+    transition: opacity .4s ease;
+    &:hover {
+      opacity: 0.7;
+    }
+    @include mq(small) {
+      width: 100%;
+    }
+  }
+  &_img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+  &_name {
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    @extend %font_size-note;
+  }
+}

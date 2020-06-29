@@ -1,0 +1,47 @@
+@use "./Theme/theme.dark" as dark;
+@use "./Theme/theme.light" as light;
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  &.theme {
+    &-dark {
+      &.theme_container {
+        @include dark.theme_container;
+      }
+      a {
+        @include dark.link;
+      }
+      .header_item .link {
+        @include dark.link-header;
+      }
+      .frame {
+        @include dark.theme_frame;
+      }
+      .switchBtn {
+        @include dark.theme_switchBtn;
+      }
+      #stalker {
+        @include dark.theme_stalker;
+      }
+    }
+    &-light {
+      a {
+        @include light.link;
+      }
+      .header_item .link {
+        @include light.link-header;
+      }
+      &.theme_container {
+        @include light.theme_container;
+      }
+      .frame {
+        @include light.theme_frame;
+      }
+      .switchBtn {
+        @include light.theme_switchBtn;
+      }
+      #stalker {
+        @include light.theme_stalker;
+      }
+    }
+  }
+}
