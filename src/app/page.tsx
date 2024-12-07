@@ -1,4 +1,4 @@
-import { FristView } from "./components/FirstView";
+import { FristView } from "@/features/index/components/fitstView";
 
 export default function Home() {
   return (
